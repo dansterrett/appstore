@@ -1,18 +1,17 @@
-GIT
-  remote: https://github.com/entropillc/alohomora.git
-  revision: d36e8b7d7e6d294c161ae871a125e3362d0d05d5
-  specs:
-    alohomora (0.0.1)
-      bcrypt-ruby (~> 3.0)
-      rails (~> 3.2.6)
-      warden (~> 1.1.1)
-
 PATH
   remote: .
   specs:
     appstore (0.0.1)
       bootstrapped (~> 2.0.3)
       rails (~> 3.2.6)
+
+PATH
+  remote: ../alohomora
+  specs:
+    alohomora (0.0.1)
+      bcrypt-ruby (~> 3.0)
+      rails (~> 3.2.6)
+      warden (~> 1.1.1)
 
 GEM
   remote: http://rubygems.org/
@@ -121,5 +120,8 @@ PLATFORMS
 DEPENDENCIES
   alohomora!
   appstore!
+  bootstrapped
   jquery-rails
+  less
+  less-rails
   sqlite3

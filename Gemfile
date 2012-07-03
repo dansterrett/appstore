@@ -9,7 +9,9 @@ gemspec
 gem "jquery-rails"
 
 gem "alohomora", :path => "../alohomora" #:git => "https://github.com/entropillc/alohomora.git" # :path => "../alohomora" #
-
+gem "bootstrapped"
+gem "less"
+gem "less-rails"
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
 # Git. Remember to move these dependencies to your gemspec before releasing
@@ -17,3 +19,5 @@ gem "alohomora", :path => "../alohomora" #:git => "https://github.com/entropillc
 
 # To use debugger
 # gem 'debugger'
+
+
