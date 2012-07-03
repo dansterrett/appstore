@@ -1,17 +1,18 @@
+GIT
+  remote: https://github.com/nwwatson/alohomora.git
+  revision: 8673c1a2c9932f06a410fcc3f8c75c752f88bedd
+  specs:
+    alohomora (0.0.1)
+      bcrypt-ruby (~> 3.0)
+      rails (~> 3.2.6)
+      warden (~> 1.1.1)
+
 PATH
   remote: .
   specs:
     appstore (0.0.1)
       bootstrapped (~> 2.0.3)
       rails (~> 3.2.6)
-
-PATH
-  remote: ../alohomora
-  specs:
-    alohomora (0.0.1)
-      bcrypt-ruby (~> 3.0)
-      rails (~> 3.2.6)
-      warden (~> 1.1.1)
 
 GEM
   remote: http://rubygems.org/

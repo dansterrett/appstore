@@ -8,7 +8,7 @@ gemspec
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
 
-gem "alohomora", :path => "../alohomora" #:git => "https://github.com/entropillc/alohomora.git" # :path => "../alohomora" #
+gem "alohomora", :git => "https://github.com/nwwatson/alohomora.git" # :path => "../alohomora" #:path => "../alohomora" #
 gem "bootstrapped"
 gem "less"
 gem "less-rails"
