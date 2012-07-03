@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/entropillc/alohomora.git
+  revision: d36e8b7d7e6d294c161ae871a125e3362d0d05d5
+  specs:
+    alohomora (0.0.1)
+      bcrypt-ruby (~> 3.0)
+      rails (~> 3.2.6)
+      warden (~> 1.1.1)
+
 PATH
   remote: .
   specs:
@@ -35,6 +44,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     builder (3.0.0)
     erubis (2.7.0)
     hike (1.2.1)
@@ -87,11 +97,14 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.33)
+    warden (1.1.1)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  alohomora!
   appstore!
   jquery-rails
   sqlite3
