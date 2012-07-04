@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120703155743) do
+ActiveRecord::Schema.define(:version => 20120703182018) do
 
   create_table "alohomora_clients", :force => true do |t|
     t.string   "uri"
@@ -96,6 +96,25 @@ ActiveRecord::Schema.define(:version => 20120703155743) do
     t.string   "uri"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "appstore_mobile_apps", :force => true do |t|
+    t.string   "name"
+    t.integer  "organizationId"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "plist_file_name"
+    t.string   "plist_content_type"
+    t.integer  "plist_file_size"
+    t.datetime "plist_updated_at"
+    t.string   "ipa_file_name"
+    t.string   "ipa_content_type"
+    t.integer  "ipa_file_size"
+    t.datetime "ipa_updated_at"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "users", :force => true do |t|

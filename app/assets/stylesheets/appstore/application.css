@@ -6,3 +6,16 @@
  *= require bootstrap_and_overrides
  *= require_tree .
 */
+
+#mobile-app-form div.control-group > div.controls > span:first-child {
+  padding-top: 5px;
+  display: block;
+}
+
+div.mobile-apps-gallery {
+  height: 72px;
+}
+
+div.mobile-apps-gallery > a {
+  float: right;
+}

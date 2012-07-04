@@ -1,0 +1,44 @@
+<%= form_for @mobile_app, :html => { :id => 'mobile-app-form', :class => 'form-horizontal', :multipart => true } do |f| %>
+  <fieldset>
+    <legend><%= form_action_title %> Mobile App</legend>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :plist, :class => 'control-label' %>
+      <div class="controls">
+        <% if !(@mobile_app.plist_file_name == nil) %>
+          <span><%= @mobile_app.plist_file_name %></span>
+        <% end %>
+        <%= f.file_field :plist %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :ipa, :class => 'control-label' %>
+      <div class="controls">
+        <% if !(@mobile_app.ipa_file_name == nil) %>
+          <span><%= @mobile_app.ipa_file_name %>
+            (<%= @mobile_app.ipa.url %>)</span>
+        <% end %>
+        <%= f.file_field :ipa %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :icon, :class => 'control-label' %>
+      <div class="controls">
+        <% if !(@mobile_app.icon_file_name == nil) %>
+          <span><%= image_tag @mobile_app.icon.url(:thumb) %></span>
+          <span><%= @mobile_app.icon_file_name %></span><br>
+        <% end %>
+        <%= f.file_field :icon %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', mobile_apps_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
