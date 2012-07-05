@@ -1,1 +1,12 @@
-<h1>Welcome</h1>
+<h1>Mobile Apps <small>Available to install to your iOS device</small></h1>
+<% if @mobile_apps.length > 0 %>
+  <% @mobile_apps.each do |mobile_app| %>
+  	<div class="mobile-apps-gallery well">
+      <a href="itms-services://?action=download-manifest&url=http://<%= request.host_with_port + mobile_app.plist.url %>"><%= image_tag mobile_app.icon.url(:thumb) %></a>
+      <h2><%= mobile_app.name %></h2>
+      <p>Tap the app icon to install to your iOS device</p>
+    </div>
+  <% end %>
+<% else %>
+  <p>There are no mobile apps available for installation.</p>
+<% end %>

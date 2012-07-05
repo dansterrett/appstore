@@ -1,0 +1,46 @@
+<%= form_for @user, {:html => { :id => 'user-form', :class => 'form-horizontal' }, :url => admin_user_path(@user) } do |f| %>
+  <fieldset>
+    <legend><%= form_action_title %> User</legend>
+    <div class="control-group">
+      <%= f.label :first_name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :first_name, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :last_name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :last_name, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :email, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :email, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :is_admin, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :admin %>
+      </div>
+    </div>
+    <h4>Organizations</h4>
+    <% Alohomora::Organization.all.each do |org| %>
+      <div class="control-group">
+        <label class="control-label"><%= org.name %></label>
+        <div class="controls">
+          <input name="organization_id[]" type="checkbox" value="<%= org.id %>"
+            <% if @user.belongs_to_org?(org) %>
+              checked="checked"
+            <% end %>
+          />
+        </div>
+      </div>
+    <% end %>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', admin_users_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

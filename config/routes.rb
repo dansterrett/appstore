@@ -1,7 +1,9 @@
 Appstore::Engine.routes.draw do
   
-  match "/mobile_apps/gallery" => "mobile_apps#gallery"
-  resources :mobile_apps
+  namespace :admin do
+    resources :users
+    resources :mobile_apps
+  end
 
   mount Alohomora::Engine, at: "/", as: "alohomora"
   resources :welcome, only: [:index]

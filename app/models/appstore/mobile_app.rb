@@ -10,7 +10,7 @@ module Appstore
                       :url => "/assets/appstore/mobile_app/icons/:id/:style/:basename.:extension",
                       :path => ":rails_root/public/assets/appstore/mobile_app/icons/:id/:style/:basename.:extension",
                       :styles => { :thumb => "72x72>" }
-    attr_accessible :name, :organization_id, :plist, :ipa, :icon
+    attr_accessible :name, :organization_id, :plist, :ipa, :icon, :organization
     belongs_to :organization
   end
 end

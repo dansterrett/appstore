@@ -1,0 +1,50 @@
+<%= form_for @mobile_app, { :html => { :id => 'mobile-app-form', :class => 'form-horizontal', :multipart => true }, :url => (@mobile_app.id ? admin_mobile_app_path(@mobile_app) : admin_mobile_apps_path) } do |f| %>
+  <fieldset>
+    <legend><%= form_action_title %> Mobile App</legend>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :plist, :class => 'control-label' %>
+      <div class="controls">
+        <% if !(@mobile_app.plist_file_name == nil) %>
+          <span><%= @mobile_app.plist_file_name %></span>
+        <% end %>
+        <%= f.file_field :plist %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :ipa, :class => 'control-label' %>
+      <div class="controls">
+        <% if !(@mobile_app.ipa_file_name == nil) %>
+          <span><%= @mobile_app.ipa_file_name %>
+            (<%= @mobile_app.ipa.url %>)</span>
+        <% end %>
+        <%= f.file_field :ipa %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :icon, :class => 'control-label' %>
+      <div class="controls">
+        <% if !(@mobile_app.icon_file_name == nil) %>
+          <span><%= image_tag @mobile_app.icon.url(:thumb) %></span>
+          <span><%= @mobile_app.icon_file_name %> (<%= @mobile_app.icon.url(:thumb) %>)</span><br>
+        <% end %>
+        <%= f.file_field :icon %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :organization, :class => 'control-label' %>
+      <div class="controls">
+        <%= collection_select(:mobile_app, :organization_id, Alohomora::Organization.all, :id, :name, :prompt => true) %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', admin_mobile_apps_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

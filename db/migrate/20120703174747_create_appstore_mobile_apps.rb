@@ -5,6 +5,8 @@ class CreateAppstoreMobileApps < ActiveRecord::Migration
       t.integer :organization_id
       t.timestamps
     end
+    
+    add_index :appstore_mobile_apps, :organization_id
   end
 
   def self.down

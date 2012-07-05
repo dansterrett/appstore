@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(:version => 20120703182018) do
 
   create_table "appstore_mobile_apps", :force => true do |t|
     t.string   "name"
-    t.integer  "organizationId"
+    t.integer  "organization_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "plist_file_name"
@@ -116,6 +116,8 @@ ActiveRecord::Schema.define(:version => 20120703182018) do
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
   end
+
+  add_index "appstore_mobile_apps", ["organization_id"], :name => "index_appstore_mobile_apps_on_organization_id"
 
   create_table "users", :force => true do |t|
     t.string   "uri"
